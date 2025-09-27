@@ -1,0 +1,68 @@
+:root { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #0b1220; color: #e6ecff; }
+.app { max-width: 720px; margin: 0 auto; padding: 24px; }
+.header { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.title { font-size: 1.5rem; font-weight: 700; }
+.row { display:flex; align-items:center; gap:10px; }
+input {
+  flex:1; padding: 12px 14px; border-radius: 10px; border: 1px solid #2a3550;
+  background: #121a2c; color:#e6ecff; outline: none;
+}
+button {
+  padding: 10px 14px; border-radius: 10px; border: none; cursor: pointer;
+  background: #3a5bff; color: white; font-weight: 600;
+}
+button.ghost { background: #1b2540; }
+.card {
+  margin-top: 18px; padding: 18px; border: 1px solid #2a3550; border-radius: 14px;
+  background: linear-gradient(180deg, #121a2c, #0c1426);
+}
+.card h2 { margin: 0 0 8px; }
+.meta { opacity: 0.8; font-size: 0.95rem; }
+.grid { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:12px; margin-top: 12px; }
+.item { background:#0f182b; border:1px solid #2a3550; border-radius:12px; padding:12px; }
+.small { font-size: 0.9rem; opacity: 0.85; }
+.error { margin-top:12px; padding:12px; border-radius:10px; background:#411d27; border:1px solid #6b2232; color:#ffd6dd; }
+.loading { opacity: 0.8; }
+.footer { margin-top:24px; opacity:0.7; font-size:0.9rem; }
+
+/* chips for recent searches */
+.chip {
+  border: 1px solid #2a3550;
+  background: #0f182b;
+  color: #e6ecff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* forecast strip */
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+.forecast-item {
+  background: #0f182b;
+  border: 1px solid #2a3550;
+  border-radius: 12px;
+  padding: 10px;
+  display: grid;
+  place-items: center;
+}
+
+/* Make sure nothing blocks typing/clicking in the input */
+.row { position: relative; z-index: 1; }
+input {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+  flex: 1;
+  color: #e6ecff;         /* visible text on dark */
+  caret-color: #e6ecff;
+}
+
+/* Keep typing smooth even on heavy pages */
+input { will-change: contents; }
