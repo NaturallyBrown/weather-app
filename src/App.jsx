@@ -163,7 +163,7 @@ export default function App() {
       <ForecastStrip forecast={forecast} units={units} />
 
       <div className="footer">
-        Data from OpenWeather • Try cities like “Portland”, “Tokyo”, “Paris”
+        Data from OpenWeather • Try cities like “San Diego”, “Aspen”, “Delhi”
       </div>
     </div>
   )
